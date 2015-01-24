@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InversionsCount {
+public class InversionsCount_v1 {
 	private static final String FILE_DIR = "src\\_1_DivideAndConquer\\";
 	private static final String FILE_NAME = "integers.txt";
 
@@ -22,6 +22,8 @@ public class InversionsCount {
 				61, 31, 85, 33, 54 };
 
 		File inputFile = new File(FILE_DIR + FILE_NAME);
+		long startTime = System.currentTimeMillis();
+
 		try {
 			System.out.println("Total number of inversions: "
 					+ inversionsCount(convertFileToArray(inputFile)));
@@ -29,8 +31,8 @@ public class InversionsCount {
 			e.printStackTrace();
 		}
 
-		System.out.println(inversionsCount(convertToList(arr3)));
-
+		final long endTime = System.currentTimeMillis();
+		System.out.println("Total execution time: " + (endTime - startTime));
 	}
 
 	private static ArrayList<Integer> convertToList(int[] arr) {
